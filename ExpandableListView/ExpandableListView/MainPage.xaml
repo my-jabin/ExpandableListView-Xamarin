@@ -4,8 +4,38 @@
              xmlns:local="clr-namespace:ExpandableListView"
              x:Class="ExpandableListView.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <ListView 
+        x:Name="ContinentListView"
+        GroupDisplayBinding="{Binding Name}"
+        GroupShortNameBinding="{Binding ShortName}"
+        IsGroupingEnabled="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ImageCell Text="{Binding Name}"
+                           Detail="{Binding ShortName} "
+                           ImageSource="{Binding Icon}"
+                           TextColor="#005569">
+                </ImageCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        <ListView.GroupHeaderTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <RelativeLayout Padding="16,8,8,16" HorizontalOptions="FillAndExpand" BackgroundColor="#E2F5F9">
+                        <Label Text="{Binding Name}"
+                               FontSize="Large"
+                               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}"
+                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=6}"  />
+                        <Image x:Name="StateImage"
+                               Source="{Binding StateIcon}" 
+                               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.8}"/>
+                        <RelativeLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GroupHeader_Clicked"  NumberOfTapsRequired="1" CommandParameter="{Binding .}"/>
+                        </RelativeLayout.GestureRecognizers>
+                    </RelativeLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.GroupHeaderTemplate>
+    </ListView>
 
 </ContentPage>
