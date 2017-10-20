@@ -74,7 +74,9 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Util\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\ExamplePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
