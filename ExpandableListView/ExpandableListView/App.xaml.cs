@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpandableListView.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace ExpandableListView
         {
             InitializeComponent();
 
-            MainPage = new ExpandableListView.MainPage();
+            MainPage = new ExamplePage(new ViewModel.ExamplePageViewModel());
         }
 
         protected override void OnStart()
