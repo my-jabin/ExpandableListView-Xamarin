@@ -12,11 +12,6 @@ namespace ExpandableListView.ViewModel
     {
         private Country _country;
 
-        public CountryViewModel()
-        {
-
-        }
-
         public CountryViewModel(Country country)
         {
             this._country = country;
@@ -25,6 +20,5 @@ namespace ExpandableListView.ViewModel
         public string Name { get { return _country.Name; } }
         public string Code { get { return _country.Code; } }
         public string Flag { get { return _country.Flag; } }
-
     }
 }

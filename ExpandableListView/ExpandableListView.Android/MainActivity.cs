@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using ImageCircle.Forms.Plugin.Droid;
 
 namespace ExpandableListView.Droid
 {
@@ -20,6 +21,7 @@ namespace ExpandableListView.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            ImageCircleRenderer.Init();
             LoadApplication(new App());
         }
     }

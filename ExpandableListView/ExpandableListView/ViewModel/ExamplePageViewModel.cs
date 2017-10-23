@@ -31,13 +31,17 @@ namespace ExpandableListView.ViewModel
             Country Japan = new Country("Japn", "JPN", "japan");
             Country Korea = new Country("Korea", "KOR", "korea");
 
-            var Germany = new Model.Country("Germany", "GEU", "germany");
-            var France = new Model.Country("France", "FRA", "france");
-            var UK = new Model.Country("United Kingdom", "GBR", "england");
+            var Germany = new Country("Germany", "GEU", "germany");
+            var France = new Country("France", "FRA", "france");
+            var UK = new Country("United Kingdom", "GBR", "england");
+            var Italia = new Country("Italia", "ITA", "italia");
 
-            var Arg = new Model.Country("Argentina", "ARG", "argentina");
-            var Brazil = new Model.Country("Brazil", "BRA", "brazil");
-            var Col = new Model.Country("Colombia", "COL", "colombia");
+            var Arg = new Country("Argentina", "ARG", "argentina");
+            var Brazil = new Country("Brazil", "BRA", "brazil");
+            var Col = new Country("Colombia", "COL", "colombia");
+
+            var Egypt = new Country("Egypt", "EGY", "egypt");
+            var Morocco = new Country("Morocco", "MAR", "morocco");
 
             Continent Asia = new Continent() { Name = "Asia" };
             Asia.Countries.Add(China);
@@ -48,19 +52,26 @@ namespace ExpandableListView.ViewModel
             Europa.Countries.Add(Germany);
             Europa.Countries.Add(France);
             Europa.Countries.Add(UK);
+            Europa.Countries.Add(Italia);
 
             Continent SA = new Continent() { Name = "South American" };
             SA.Countries.Add(Arg);
             SA.Countries.Add(Brazil);
             SA.Countries.Add(Col);
 
+            Continent Africa = new Continent() { Name = "Africa" };
+            Africa.Countries.Add(Morocco);
+            Africa.Countries.Add(Egypt);
+
             var AsiaViewModel = new ContinentViewModel(Asia);
             var EuropaViewModel = new ContinentViewModel(Europa);
             var SAViewModel = new ContinentViewModel(SA);
+            var AfricaViewModel = new ContinentViewModel(Africa);
 
             List.Add(AsiaViewModel);
             List.Add(EuropaViewModel);
             List.Add(SAViewModel);
+            List.Add(AfricaViewModel);
 
         }
 

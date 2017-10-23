@@ -27,7 +27,8 @@ namespace ExpandableListView.ViewModel
                 Countries.Add(new CountryViewModel(c));
             }
             // ContinentViewModel add a range with CountryViewModel
-            this.AddRange(Countries);
+            if(expanded)
+                this.AddRange(Countries);
         }
 
         public string Name { get { return _continent.Name; } }
